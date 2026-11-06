@@ -1,0 +1,472 @@
+{
+  "metadata": {
+    "producer": "gpt",
+    "generated_at": "2026-11-06T08:49:45Z",
+    "collection_window_start": "2026-11-05T08:49:45Z",
+    "collection_window_end": "2026-11-06T08:49:45Z",
+    "status": "partial_not_final",
+    "target_event_count": 100,
+    "actual_event_count": 19,
+    "validated_event_count": 19,
+    "unique_dedup_keys": 19,
+    "source_status": {
+      "reuters": {
+        "status": "accessible_partial",
+        "verified_event_count": 19,
+        "note": "19 Reuters-origin records qualified. Publication timestamps were verified from Reuters pages or Reuters-attributed syndication pages with explicit publication times, then normalized to UTC."
+      },
+      "tradingview": {
+        "status": "accessible_but_no_qualified_records",
+        "verified_event_count": 0,
+        "note": "Current TradingView News pages were discoverable, but the accessible items exposed only a calendar date and not a verifiable publication time inside the exact rolling window; they were excluded."
+      },
+      "unusual_whales": {
+        "status": "feed_not_retrievable_for_window",
+        "verified_event_count": 0,
+        "note": "The requested news-feed page could not be retrieved through the accessible public web interface, and search results did not expose timestamped in-window news-feed rows; no events were inferred from option-flow or community pages."
+      }
+    },
+    "validation": {
+      "overall": "provisional",
+      "json_schema": "PASS",
+      "canonical_pydantic": "NOT_VERIFIED",
+      "canonical_pydantic_model_available": false,
+      "validated_record_count": 19,
+      "schema_path": "schemas/news-event.schema.json",
+      "notes": "The repository tree contains README.md, schemas/news-event.schema.json and data snapshots, but no canonical NewsEvent Pydantic model. All event fields, required properties, enum values, URI/date-time formats, numeric bounds, additional properties, UTC window membership, unique URLs and deduplication keys were checked against the repository JSON Schema contract. Canonical Pydantic validation is not claimed."
+    },
+    "limitations": [
+      "Only 19 unique timestamp-verifiable Reuters events qualified, below the target of 100; no records were fabricated or padded.",
+      "TradingView yielded no record with a separately verifiable publication timestamp inside the exact window.",
+      "Unusual Whales did not expose retrievable timestamped news-feed rows through the accessible public page.",
+      "The canonical NewsEvent Pydantic model is absent from the repository; canonical validation remains NOT_VERIFIED and overall validation is provisional."
+    ]
+  },
+  "events": [
+    {
+      "id": "evt-20261105-qualcomm-handset-sales",
+      "published_at": "2026-11-05T10:01:00Z",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/business/retail-consumer/qualcomm-slumps-weak-smartphone-chip-sales-overshadow-data-center-momentum-2026-11-05/",
+      "headline": "Qualcomm slumps as weak smartphone chip sales overshadow data-center momentum",
+      "summary": "Qualcomm shares fell about 9% in premarket trading after handset-chip sales missed expectations, with handset revenue down 26% year over year. Data-center and automotive opportunities remain longer-term growth options, but near-term handset weakness, higher memory costs and the Apple revenue roll-off weighed on the outlook.",
+      "entities": [
+        "QCOM",
+        "Qualcomm",
+        "Android",
+        "Apple",
+        "data-center chips",
+        "automotive chips"
+      ],
+      "event_type": "earnings",
+      "sentiment": -0.5,
+      "severity": 0.75,
+      "reliability": 0.99,
+      "fetched_at": "2026-11-06T08:49:45Z",
+      "dedup_key": "reuters|2026-11-05|qualcomm-handset-sales-miss-data-center-offset"
+    },
+    {
+      "id": "evt-20261105-tech-stock-rout-ai-trade",
+      "published_at": "2026-11-05T16:40:00Z",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/business/view-tech-stock-rout-accelerates-retreat-ai-trade-2026-11-05/",
+      "headline": "Tech-stock rout accelerates retreat from the AI trade",
+      "summary": "The semiconductor index fell as much as 11% and the Nasdaq dropped as much as 5% as investors extended a month-long retreat from AI-linked equities. Reuters cited weaker Qualcomm and Arm results, institutional selling, hedge-fund de-risking and uncertainty over data-center permitting and the returns on heavy AI capital spending.",
+      "entities": [
+        "Nasdaq Composite",
+        "Philadelphia Semiconductor Index",
+        "AMD",
+        "SNDK",
+        "MU",
+        "DELL",
+        "MRVL",
+        "AI data centers"
+      ],
+      "event_type": "market_structure",
+      "sentiment": -0.75,
+      "severity": 0.95,
+      "reliability": 0.99,
+      "fetched_at": "2026-11-06T08:49:45Z",
+      "dedup_key": "reuters|2026-11-05|tech-stock-rout-ai-trade"
+    },
+    {
+      "id": "evt-20261105-bank-england-rate-hike",
+      "published_at": "2026-11-05T12:10:00Z",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/business/bank-england-raises-rates-first-time-since-2023-says-more-may-come-2026-11-05/",
+      "headline": "Bank of England raises rates for first time since 2023 and warns more may come",
+      "summary": "The Bank of England raised Bank Rate by 25 basis points to 4%, its first increase in more than three years, in an 8-1 vote. It warned that another increase may be needed if the US-Iran conflict keeps energy prices elevated, while forecasting UK inflation could approach 5% in mid-2027.",
+      "entities": [
+        "Bank of England",
+        "GBP",
+        "UK inflation",
+        "UK gilts",
+        "US-Iran conflict"
+      ],
+      "event_type": "policy",
+      "sentiment": -0.25,
+      "severity": 0.85,
+      "reliability": 0.99,
+      "fetched_at": "2026-11-06T08:49:45Z",
+      "dedup_key": "reuters|2026-11-05|bank-england-hikes-rates-to-4-percent"
+    },
+    {
+      "id": "evt-20261105-box-nvidia-ai-workflows",
+      "published_at": "2026-11-05T14:06:00Z",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/business/box-expands-nvidia-partnership-unveils-ai-workflow-builder-2026-11-05/",
+      "headline": "Box expands Nvidia partnership with AI retrieval engine and workflow builder",
+      "summary": "Box introduced Context Retrieval, built on Nvidia Nemotron models, to improve AI access to enterprise files, and Box Architect, a natural-language tool for creating automated workflows. The retrieval product is planned for general availability early next year, while the workflow builder is scheduled for a beta rollout in the fourth quarter.",
+      "entities": [
+        "BOX",
+        "NVDA",
+        "Box Context Retrieval",
+        "Box Architect",
+        "Nvidia Nemotron",
+        "enterprise AI"
+      ],
+      "event_type": "tech",
+      "sentiment": 0.4,
+      "severity": 0.65,
+      "reliability": 0.99,
+      "fetched_at": "2026-11-06T08:49:45Z",
+      "dedup_key": "reuters|2026-11-05|box-nvidia-ai-context-retrieval-workflow-builder"
+    },
+    {
+      "id": "evt-20261105-world-bank-developing-debt",
+      "published_at": "2026-11-05T14:39:00Z",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/business/developing-countries-external-debt-hit-record-94-trillion-2025-world-bank-says-2026-11-05/",
+      "headline": "Developing countries' external debt reaches a record $9.4 trillion",
+      "summary": "The World Bank said external debt in low- and middle-income countries rose 5.5% to $9.4 trillion in 2025, while borrowing from private creditors and public bond issuance climbed nearly 35% to $251 billion. Debt-service costs reached $1.4 trillion, increasing pressure on public investment and leaving highly indebted countries more exposed to shocks.",
+      "entities": [
+        "World Bank",
+        "low- and middle-income countries",
+        "IDA",
+        "sovereign debt",
+        "private creditors"
+      ],
+      "event_type": "credit",
+      "sentiment": -0.55,
+      "severity": 0.85,
+      "reliability": 0.99,
+      "fetched_at": "2026-11-06T08:49:45Z",
+      "dedup_key": "reuters|2026-11-05|world-bank-developing-country-debt-94-trillion"
+    },
+    {
+      "id": "evt-20261105-ao-shearman-ai-plan",
+      "published_at": "2026-11-05T15:50:45Z",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/legal/legalindustry/ao-shearmans-11-billion-ai-plan-builds-law-firms-tech-investments-2026-11-05/",
+      "headline": "A&O Shearman plans $1.1 billion AI investment over five years",
+      "summary": "A&O Shearman plans to invest $1.1 billion in AI over five years, with legal practice teams dedicating at least 3% of their time to building AI tools and services. The strategy reflects a shift from generic productivity pilots toward domain-specific applications embedded in legal workflows, including contract analysis developed with Harvey and Microsoft.",
+      "entities": [
+        "A&O Shearman",
+        "Harvey",
+        "Microsoft",
+        "legal technology",
+        "ContractMatrix"
+      ],
+      "event_type": "tech",
+      "sentiment": 0.35,
+      "severity": 0.65,
+      "reliability": 0.99,
+      "fetched_at": "2026-11-06T08:49:45Z",
+      "dedup_key": "reuters|2026-11-05|ao-shearman-11-billion-ai-investment"
+    },
+    {
+      "id": "evt-20261105-openai-gpt6-cyber",
+      "published_at": "2026-11-05T17:01:08Z",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/technology/openai-launches-gpt-6-cyber-with-critical-cybersecurity-rating-2026-11-05/",
+      "headline": "OpenAI releases GPT-6 Cyber to vetted security customers",
+      "summary": "OpenAI released GPT-6 Cyber to a small group of vetted customers and assigned it a Critical cybersecurity rating under its safety framework. The model is intended to help researchers identify vulnerabilities, test exploitability and develop fixes before malicious actors can use the flaws.",
+      "entities": [
+        "OpenAI",
+        "GPT-6 Cyber",
+        "cybersecurity",
+        "vulnerability research",
+        "AI safety"
+      ],
+      "event_type": "tech",
+      "sentiment": 0.25,
+      "severity": 0.85,
+      "reliability": 0.99,
+      "fetched_at": "2026-11-06T08:49:45Z",
+      "dedup_key": "reuters|2026-11-05|openai-gpt-6-cyber-launch"
+    },
+    {
+      "id": "evt-20261105-microsoft-neocloud-oversight",
+      "published_at": "2026-11-05T17:29:00Z",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/business/microsoft-tightens-oversight-neocloud-data-center-projects-bloomberg-news-2026-11-05/",
+      "headline": "Microsoft tightens oversight of neocloud data-center projects, Bloomberg reports",
+      "summary": "Reuters reported that Microsoft is tightening oversight of some data-center projects run by Nebius, IREN and Nscale and is reconsidering additional third-party capacity deals. The report cited Bloomberg and people familiar with the matter; it did not say Microsoft had halted all such projects.",
+      "entities": [
+        "MSFT",
+        "Microsoft",
+        "Nebius",
+        "IREN",
+        "Nscale",
+        "CoreWeave",
+        "AI data centers"
+      ],
+      "event_type": "tech",
+      "sentiment": -0.45,
+      "severity": 0.8,
+      "reliability": 0.9,
+      "fetched_at": "2026-11-06T08:49:45Z",
+      "dedup_key": "reuters|2026-11-05|microsoft-tightens-neocloud-project-oversight"
+    },
+    {
+      "id": "evt-20261105-starshield-contract",
+      "published_at": "2026-11-05T17:56:38Z",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/business/media-telecom/ukraines-starshield-contract-with-us-expires-next-year-diplomat-says-2026-11-05/",
+      "headline": "Ukraine says its US Starshield contract expires next year",
+      "summary": "A senior Ukrainian diplomat said Kyiv's US-government contract for access to SpaceX's Starshield military satellite network expires around mid-2027 and that renewal talks need to begin soon. The urgency follows unexplained service-speed restrictions that Ukrainian commanders said disrupted some drone-interception operations.",
+      "entities": [
+        "Ukraine",
+        "Starshield",
+        "SpaceX",
+        "SPCX",
+        "US Department of Defense",
+        "Patriot",
+        "NASAMS"
+      ],
+      "event_type": "geopolitical",
+      "sentiment": -0.3,
+      "severity": 0.75,
+      "reliability": 0.98,
+      "fetched_at": "2026-11-06T08:49:45Z",
+      "dedup_key": "reuters|2026-11-05|ukraine-starshield-contract-renewal"
+    },
+    {
+      "id": "evt-20261105-metr-anthropic-ai-rd",
+      "published_at": "2026-11-05T18:02:37Z",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/technology/anthropics-models-improving-nearly-twice-fast-with-help-ai-study-finds-2026-11-05/",
+      "headline": "METR study finds Anthropic models improving nearly twice as fast with AI assistance",
+      "summary": "An 11-week independent assessment found Anthropic's benchmark capabilities had improved about 1.9 times faster since October 2025, with AI tools contributing to model-development work. METR stressed substantial uncertainty and said AI was not yet making highly significant, fully autonomous contributions to the most important stages of model training.",
+      "entities": [
+        "Anthropic",
+        "METR",
+        "Claude",
+        "AI-assisted R&D",
+        "recursive self-improvement"
+      ],
+      "event_type": "tech",
+      "sentiment": 0.1,
+      "severity": 0.9,
+      "reliability": 0.97,
+      "fetched_at": "2026-11-06T08:49:45Z",
+      "dedup_key": "reuters|2026-11-05|metr-anthropic-ai-rd-acceleration"
+    },
+    {
+      "id": "evt-20261105-google-wyoming-data-center",
+      "published_at": "2026-11-05T20:46:00Z",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/world/us/google-plans-17-billion-wyoming-data-center-amid-rising-threats-curbs-2026-11-05/",
+      "headline": "Google plans $17 billion Wyoming data center amid rising political resistance",
+      "summary": "Google said it will invest $17 billion in its first Wyoming data center, working with regional energy and infrastructure partners. Part of the power supply is expected from a 702-megawatt fuel-cell project with carbon capture, as investors weigh mounting local and political resistance to data-center construction.",
+      "entities": [
+        "GOOGL",
+        "Google",
+        "Wyoming",
+        "Tallgrass Energy",
+        "Black Hills Energy",
+        "American Electric Power",
+        "Bloom Energy",
+        "AI data centers"
+      ],
+      "event_type": "tech",
+      "sentiment": 0.3,
+      "severity": 0.8,
+      "reliability": 0.99,
+      "fetched_at": "2026-11-06T08:49:45Z",
+      "dedup_key": "reuters|2026-11-05|google-17-billion-wyoming-data-center"
+    },
+    {
+      "id": "evt-20261105-senator-tech-documents",
+      "published_at": "2026-11-05T21:42:00Z",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/world/democratic-senator-demands-tech-firms-fcc-chair-turn-over-documents-2026-11-05/",
+      "headline": "Democratic senator asks major technology firms and FCC chair for documents",
+      "summary": "Senator Richard Blumenthal, who is expected to lead a Senate investigative subcommittee in January, asked major technology companies and FCC Chair Brendan Carr to provide records voluntarily. The inquiry concerns reported donations and regulatory actions involving media companies; Blumenthal said subpoenas may be considered if the requests are not met.",
+      "entities": [
+        "Richard Blumenthal",
+        "FCC",
+        "Apple",
+        "Meta",
+        "Google",
+        "Nvidia",
+        "Amazon",
+        "Microsoft",
+        "Paramount Skydance"
+      ],
+      "event_type": "policy",
+      "sentiment": -0.2,
+      "severity": 0.55,
+      "reliability": 0.98,
+      "fetched_at": "2026-11-06T08:49:45Z",
+      "dedup_key": "reuters|2026-11-05|senator-blumenthal-tech-documents-fcc"
+    },
+    {
+      "id": "evt-20261105-anthropic-ipo-backlash",
+      "published_at": "2026-11-05T23:41:00Z",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/world/ai-backlash-could-threaten-anthropic-ipo-timing-potential-investors-say-2026-11-05/",
+      "headline": "Investor pushback may threaten Anthropic's planned IPO timing",
+      "summary": "Potential investors questioned whether Anthropic can proceed with its planned IPO roadshow and argued that the discussed $1.5 trillion valuation may be too high after the technology selloff. Investors are seeking a larger discount while weighing the company's losses, infrastructure commitments and the need for substantial financing.",
+      "entities": [
+        "Anthropic",
+        "Claude",
+        "AI IPO",
+        "AI infrastructure",
+        "CoreWeave",
+        "SpaceX"
+      ],
+      "event_type": "credit",
+      "sentiment": -0.5,
+      "severity": 0.9,
+      "reliability": 0.98,
+      "fetched_at": "2026-11-06T08:49:45Z",
+      "dedup_key": "reuters|2026-11-05|anthropic-ipo-valuation-backlash"
+    },
+    {
+      "id": "evt-20261106-letterboxd-nyt-talks",
+      "published_at": "2026-11-06T00:33:00Z",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/business/media-telecom/new-york-times-company-advanced-talks-acquire-letterboxd-roughly-330-million-nyt-2026-11-06/",
+      "headline": "New York Times in exclusive talks to buy Letterboxd for about $330 million",
+      "summary": "The New York Times Company is in exclusive talks to acquire film-focused social platform Letterboxd for roughly $330 million, according to a New York Times report cited by Reuters. No agreement has been reached; the proposed price would exceed 20 times Letterboxd's projected 2026 earnings.",
+      "entities": [
+        "NYT",
+        "New York Times Company",
+        "Letterboxd",
+        "The Athletic",
+        "Wirecutter",
+        "Wordle"
+      ],
+      "event_type": "market_structure",
+      "sentiment": 0.15,
+      "severity": 0.5,
+      "reliability": 0.97,
+      "fetched_at": "2026-11-06T08:49:45Z",
+      "dedup_key": "reuters|2026-11-06|nyt-letterboxd-acquisition-talks"
+    },
+    {
+      "id": "evt-20261106-iren-microsoft-delays",
+      "published_at": "2026-11-06T01:57:00Z",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/technology/neocloud-firm-iren-tops-quarterly-revenue-estimates-shares-jump-2026-11-05/",
+      "headline": "IREN delays some Microsoft AI infrastructure deliveries while planning $15 billion in capex",
+      "summary": "IREN said some infrastructure deliveries for Microsoft were delayed after the customer requested network-design changes, pushing its $4 billion-plus annualized revenue target into early 2027. The company still beat quarterly revenue estimates as AI cloud revenue rose to $200 million, but capital commitments reached $18.95 billion and planned remaining fiscal-year capex is about $15 billion.",
+      "entities": [
+        "IREN",
+        "Microsoft",
+        "MSFT",
+        "Nvidia",
+        "NVDA",
+        "AI cloud",
+        "CoreWeave",
+        "Nebius"
+      ],
+      "event_type": "earnings",
+      "sentiment": -0.25,
+      "severity": 0.85,
+      "reliability": 0.99,
+      "fetched_at": "2026-11-06T08:49:45Z",
+      "dedup_key": "reuters|2026-11-06|iren-microsoft-data-center-delays-capex"
+    },
+    {
+      "id": "evt-20261106-japan-foreign-bonds",
+      "published_at": "2026-11-06T05:06:57Z",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/business/retail-consumer/japanese-investors-snap-up-foreign-long-term-bonds-tech-stocks-slide-2026-11-06/",
+      "headline": "Japanese investors return to foreign long-term bonds amid technology selloff",
+      "summary": "Japanese investors bought a net 1.31 trillion yen of foreign long-term bonds in the week ended October 31, their first net purchase in seven weeks, after six weeks of selling. Foreign investors also bought a large amount of Japanese bonds, while the report noted that Japanese investors remained net sellers of foreign fixed income year to date.",
+      "entities": [
+        "Japan",
+        "Japanese Ministry of Finance",
+        "JGBs",
+        "US Treasuries",
+        "foreign long-term bonds",
+        "Nasdaq"
+      ],
+      "event_type": "market_structure",
+      "sentiment": 0.1,
+      "severity": 0.6,
+      "reliability": 0.99,
+      "fetched_at": "2026-11-06T08:49:45Z",
+      "dedup_key": "reuters|2026-11-06|japan-investors-foreign-long-bonds"
+    },
+    {
+      "id": "evt-20261106-hedge-fund-risk-cuts",
+      "published_at": "2026-11-06T06:58:00Z",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/world/china/tech-selloff-wipes-out-hedge-fund-gains-prompting-risk-cuts-layoffs-2026-11-06/",
+      "headline": "Tech selloff wipes out hedge-fund gains and prompts risk cuts and layoffs",
+      "summary": "The technology-led rout erased much of many hedge funds' 2026 gains, with tech-focused equity long-short funds down more than 4% on Thursday. Walleye Capital said it would shrink its internal equity long-short business and return some capital, while other multi-manager platforms were reported to be cutting leverage and teams.",
+      "entities": [
+        "Walleye Capital",
+        "Goldman Sachs",
+        "JPMorgan",
+        "PivotalPath",
+        "Nasdaq 100",
+        "hedge funds"
+      ],
+      "event_type": "market_structure",
+      "sentiment": -0.65,
+      "severity": 0.9,
+      "reliability": 0.99,
+      "fetched_at": "2026-11-06T08:49:45Z",
+      "dedup_key": "reuters|2026-11-06|hedge-funds-ai-rout-risk-cuts"
+    },
+    {
+      "id": "evt-20261106-tesla-cybertruck-wind-down",
+      "published_at": "2026-11-06T07:05:00Z",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/business/autos-transportation/tesla-wind-down-cybertruck-production-texas-gigafactory-next-year-musk-says-2026-11-06/",
+      "headline": "Tesla plans to wind down Cybertruck production at its Texas factory to make room for Cybercab",
+      "summary": "Elon Musk said Tesla plans to wind down Cybertruck production at its Texas Gigafactory around mid-2027 to accommodate more Cybercab production. It remains unclear whether Cybertruck production will move elsewhere or end, while the vehicle has struggled to meet the mass-market expectations set at launch.",
+      "entities": [
+        "TSLA",
+        "Tesla",
+        "Cybertruck",
+        "Cybercab",
+        "robotaxi",
+        "Austin Gigafactory"
+      ],
+      "event_type": "tech",
+      "sentiment": -0.25,
+      "severity": 0.6,
+      "reliability": 0.99,
+      "fetched_at": "2026-11-06T08:49:45Z",
+      "dedup_key": "reuters|2026-11-06|tesla-cybertruck-production-wind-down"
+    },
+    {
+      "id": "evt-20261106-uk-house-prices",
+      "published_at": "2026-11-06T07:45:00Z",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/world/uk/uk-house-prices-post-biggest-annual-fall-since-october-2023-lloyds-says-2026-11-06/",
+      "headline": "UK house prices post their biggest annual fall since October 2023",
+      "summary": "Lloyds data showed UK house prices fell 1.2% year over year and 0.6% month over month in October, the steepest annual decline since October 2023. Renewed inflation and higher mortgage borrowing costs, partly linked to the Iran conflict and the Bank of England's rate increase, are weighing on housing demand.",
+      "entities": [
+        "UK",
+        "Lloyds",
+        "GBP",
+        "UK housing",
+        "Bank of England",
+        "mortgage rates",
+        "Iran conflict"
+      ],
+      "event_type": "macro",
+      "sentiment": -0.45,
+      "severity": 0.65,
+      "reliability": 0.99,
+      "fetched_at": "2026-11-06T08:49:45Z",
+      "dedup_key": "reuters|2026-11-06|uk-house-prices-october-drop"
+    }
+  ]
+}
